@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { TablaPaisesComponent } from './components/tabla-paises/tabla-paises.component';
+import { AltaActorComponent } from './components/alta-actor/alta-actor.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TablaPaisesComponent, AltaActorComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
