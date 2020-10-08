@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "moricarlosprimerparcial": {
+      "hosting": {
+        "primerParcial": [
+          "moricarlosprimerparcial"
+        ]
+      }
+    }
+  }
+}
