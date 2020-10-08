@@ -1,1 +1,60 @@
-<p>alta-actor works!</p>
+<div class="main-container">
+  <h1>Carga de Actor</h1>
+  <div class="form-container">
+    <form>
+      <h3>Formulario de carga básica</h3>
+      <h4>(Pendientes las validaciones)</h4>
+      <div class="form-group">
+        <label for="exampleInputName">Nombre Actor</label>
+        <input
+          type="text"
+          class="form-control"
+          name="nombre"
+          id="exampleInputName"
+          placeholder="Ingrese nombre Actor"
+          required
+          [(ngModel)]="nuevoActor.nombre"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputName">Apellido Actor</label>
+        <input
+          type="text"
+          class="form-control"
+          name="apellido"
+          id="exampleInputName"
+          placeholder="Ingrese apellido Actor"
+          required
+          [(ngModel)]="nuevoActor.apellido"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Fecha Nacimiento</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Fecha de Nacimiento"
+          name="nacimiento"
+          [(ngModel)]="nuevoActor.fecha_nacimiento"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Sexo</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="sexo" [(ngModel)]="nuevoActor.sexo">
+          <option>Masculino</option>
+          <option>Femenino</option>
+        </select>
+      </div>
+      <button *ngIf="!loading" type="submit" class="btn btn-primary" (click)="CargarActor($event)">Cargar Actor</button>
+      <div class="spinner">
+        <div *ngIf="loading" class="spinner-border text-primary" role="status">
+          <span class="sr-only">Cargando Actor...</span>
+        </div>
+      </div>
+    </form>
+    <app-tabla-paises (seleccionarPais)="asignarPais($event)"></app-tabla-paises>
+  </div>
+</div>

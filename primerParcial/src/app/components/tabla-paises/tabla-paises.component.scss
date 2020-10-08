@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+.main-container {
+  background-color: #7fffd454;
+  .actor-row {
+    cursor: pointer;
+  }
+  .data-selected {
+    background-color: #0cc184;
+  }
+  h2 {
+    padding: 20px;
+  }
+  h2,
+  h4 {
+    text-align: center;
+  }
+}

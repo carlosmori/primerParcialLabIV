@@ -1,1 +1,27 @@
-<p>tabla-paises works!</p>
+<div class="main-container">
+  <h2>Tabla de Paises</h2>
+  <h4>*Seleccione un Pais</h4>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Foto</th>
+        <th scope="col">Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let pais of paises; index as i"
+        (click)="selecPais(pais)"
+        class="actor-row"
+        [ngClass]="{ 'data-selected': selectedRow == pais.name }"
+      >
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          <img [src]="pais.flag" class="mr-2" style="width: 70px" />
+        </td>
+        <td>{{ pais.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
