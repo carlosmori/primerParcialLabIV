@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Actor } from 'src/app/interfaces/actor';
 import { MoviesService } from 'src/app/services/movies.service';
 
@@ -10,6 +11,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class CreateMovieComponent implements OnInit {
   nombre: string;
+  model: NgbDateStruct;
   newMovie: any = {
     id: null,
     nombre: '',
@@ -28,7 +30,11 @@ export class CreateMovieComponent implements OnInit {
   };
   movies: any[];
   loading: boolean;
-  constructor(private router: Router, private moviesService: MoviesService) {}
+  constructor(
+    private router: Router,
+    private moviesService: MoviesService,
+    private parserFormatter: NgbDateParserFormatter
+  ) {}
 
   ngOnInit(): void {}
   CargarPelicula(event) {
@@ -36,6 +42,7 @@ export class CreateMovieComponent implements OnInit {
     event.stopPropagation();
     console.log(this.newMovie);
     this.newMovie.id = 17;
+    this.newMovie.fecha_estreno = this.parserFormatter.format(this.model);
     this.moviesService.createMovie(this.newMovie);
     this.loading = true;
     setTimeout(() => {

@@ -27,16 +27,19 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1">Fecha Estreno</label>
-        <input
-          type="text"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder="Fecha de Estreno"
-          name="inputFecha"
-          [(ngModel)]="newMovie.fecha_estreno"
-        />
+        <div class="input-group">
+          <input
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dp"
+            [(ngModel)]="model"
+            ngbDatepicker
+            #d="ngbDatepicker"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Cantidad de Espectadores</label>
