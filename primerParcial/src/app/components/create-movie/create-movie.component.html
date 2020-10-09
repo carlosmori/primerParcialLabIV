@@ -1,0 +1,65 @@
+<div class="main-container">
+  <h1>Carga de Peliculas</h1>
+  <div class="form-container">
+    <form>
+      <h3>Formulario de carga básica</h3>
+      <h4>(Pendientes las validaciones)</h4>
+      <div class="form-group">
+        <label for="exampleInputName">Nombre pelicula</label>
+        <input
+          type="text"
+          class="form-control"
+          name="nombre"
+          id="exampleInputName"
+          placeholder="Ingrese nombre Pelicula"
+          required
+          [(ngModel)]="newMovie.nombre"
+        />
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Seleccion Genero</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="selectTipo" [(ngModel)]="newMovie.tipo">
+          <option>Terror</option>
+          <option>Comedia</option>
+          <option>Amor</option>
+          <option>Entre Otros</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Fecha Estreno</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Fecha de Estreno"
+          name="inputFecha"
+          [(ngModel)]="newMovie.fecha_estreno"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Cantidad de Espectadores</label>
+        <input
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Cantidad de Espectadores"
+          name="inputCantidad_publico"
+          [(ngModel)]="newMovie.cantidad_publico"
+        />
+      </div>
+
+      <button *ngIf="!loading" type="submit" class="btn btn-primary" (click)="CargarPelicula($event)">
+        Cargar Pelicula
+      </button>
+      <div class="spinner">
+        <div *ngIf="loading" class="spinner-border text-primary" role="status">
+          <span class="sr-only">Cargando Pelicula...</span>
+        </div>
+      </div>
+    </form>
+    <app-tabla-actor (selectActor)="selectActor($event)"></app-tabla-actor>
+  </div>
+</div>

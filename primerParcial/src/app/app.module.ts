@@ -18,9 +18,22 @@ import { ModificarActorComponent } from './components/modificar-actor/modificar-
 import { DetalleActorComponent } from './components/detalle-actor/detalle-actor.component';
 import { BorrarActorComponent } from './components/borrar-actor/borrar-actor.component';
 import { TablaActorComponent } from './components/tabla-actor/tabla-actor.component';
+import { CreateMovieComponent } from './components/create-movie/create-movie.component';
 
 @NgModule({
-  declarations: [AppComponent, TablaPaisesComponent, AltaActorComponent, BienvenidoComponent, ErrorComponent, ActorListadoComponent, ModificarActorComponent, DetalleActorComponent, BorrarActorComponent, TablaActorComponent],
+  declarations: [
+    AppComponent,
+    TablaPaisesComponent,
+    AltaActorComponent,
+    BienvenidoComponent,
+    ErrorComponent,
+    ActorListadoComponent,
+    ModificarActorComponent,
+    DetalleActorComponent,
+    BorrarActorComponent,
+    TablaActorComponent,
+    CreateMovieComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
