@@ -1,0 +1,8 @@
+<div class="main-container">
+  <app-tabla-actor (selectActor)="selectActor($event)"></app-tabla-actor>
+</div>
+<div class="secondary-container">
+  <app-modificar-actor [actor]="selectedActor"></app-modificar-actor>
+  <app-detalle-actor [actor]="selectedActor"></app-detalle-actor>
+  <app-borrar-actor [actor]="selectedActor"></app-borrar-actor>
+</div>

@@ -12,9 +12,15 @@ import { BienvenidoComponent } from './components/bienvenido/bienvenido.componen
 import { ErrorComponent } from './components/error/error.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ActorListadoComponent } from './components/actor-listado/actor-listado.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModificarActorComponent } from './components/modificar-actor/modificar-actor.component';
+import { DetalleActorComponent } from './components/detalle-actor/detalle-actor.component';
+import { BorrarActorComponent } from './components/borrar-actor/borrar-actor.component';
+import { TablaActorComponent } from './components/tabla-actor/tabla-actor.component';
 
 @NgModule({
-  declarations: [AppComponent, TablaPaisesComponent, AltaActorComponent, BienvenidoComponent, ErrorComponent],
+  declarations: [AppComponent, TablaPaisesComponent, AltaActorComponent, BienvenidoComponent, ErrorComponent, ActorListadoComponent, ModificarActorComponent, DetalleActorComponent, BorrarActorComponent, TablaActorComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     AngularFirestoreModule,
     HttpClientModule,
     FormsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

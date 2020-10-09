@@ -1,0 +1,9 @@
+<div class="main-container">
+  <div *ngIf="actor">
+    <h4>{{ actor.nombre }} {{ actor.apellido }}</h4>
+    <img [src]="actor.foto" class="mr-2" style="width: 100px" />
+    <div class="sexo">sexo: {{ actor.sexo }}</div>
+    <div class="estreno">Fecha de Nacimiento : {{ actor.fecha_nacimiento }}</div>
+    <div class="estreno">Nacionalidad : {{ actor.nacionalidad }}</div>
+  </div>
+</div>

@@ -1,9 +1,7 @@
 <div class="main-container">
-  <h1>Carga de Actor</h1>
-  <div class="form-container">
+  <div class="form-container" *ngIf="actor">
     <form>
-      <h3>Formulario de carga básica</h3>
-      <h4>(Pendientes las validaciones)</h4>
+      <h3>Formulario de actualizacion</h3>
       <div class="form-group">
         <label for="exampleInputName">Nombre Actor</label>
         <input
@@ -28,22 +26,22 @@
           [(ngModel)]="nuevoActor.apellido"
         />
       </div>
-      <div class="form-group">
-        <div class="input-group">
-          <input
-            class="form-control"
-            placeholder="yyyy-mm-dd"
-            name="dp"
-            [(ngModel)]="model"
-            ngbDatepicker
-            #d="ngbDatepicker"
-          />
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
-          </div>
-        </div>
-      </div>
       <!-- <div class="form-group">
+          <div class="input-group">
+            <input
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              name="dp"
+              [(ngModel)]="model"
+              ngbDatepicker
+              #d="ngbDatepicker"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div> -->
+      <div class="form-group">
         <label for="exampleInputEmail1">Fecha Nacimiento</label>
         <input
           type="text"
@@ -54,8 +52,7 @@
           name="nacimiento"
           [(ngModel)]="nuevoActor.fecha_nacimiento"
         />
-        <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
-      </div> -->
+      </div>
 
       <div class="form-group">
         <label for="exampleFormControlSelect1">Sexo</label>
@@ -64,13 +61,14 @@
           <option>Femenino</option>
         </select>
       </div>
-      <button *ngIf="!loading" type="submit" class="btn btn-primary" (click)="CargarActor($event)">Cargar Actor</button>
+      <button *ngIf="!loading" type="submit" class="btn btn-primary" (click)="ActualizarActor($event)">
+        Cargar Actor
+      </button>
       <div class="spinner">
         <div *ngIf="loading" class="spinner-border text-primary" role="status">
           <span class="sr-only">Cargando Actor...</span>
         </div>
       </div>
     </form>
-    <app-tabla-paises (seleccionarPais)="asignarPais($event)"></app-tabla-paises>
   </div>
 </div>

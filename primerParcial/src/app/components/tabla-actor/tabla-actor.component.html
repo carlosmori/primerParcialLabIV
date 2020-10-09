@@ -1,0 +1,35 @@
+<div class="main-container">
+  <h2>Tabla de Actores</h2>
+  <h4>*Seleccione un Actor</h4>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Foto</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Fecha de Nacimiento</th>
+        <th scope="col">Nacionalidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let actor of actors; index as i"
+        (click)="selActor(actor)"
+        class="actor-row"
+        [ngClass]="{ 'data-selected': selectedRow === actor.id }"
+      >
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          <img [src]="actor.foto" class="mr-2" style="width: 70px" />
+        </td>
+        <td>{{ actor.nombre }}</td>
+        <td>{{ actor.apellido }}</td>
+        <td>{{ actor.sexo }}</td>
+        <td>{{ actor.fecha_nacimiento }}</td>
+        <td>{{ actor.nacionalidad }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
