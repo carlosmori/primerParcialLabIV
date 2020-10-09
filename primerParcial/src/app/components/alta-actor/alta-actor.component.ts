@@ -40,6 +40,7 @@ export class AltaActorComponent implements OnInit {
     fecha_nacimiento: '',
     sexo: '',
     nacionalidad: '',
+    borrado: 1,
   };
   loading: boolean;
   constructor(private actorsService: ActorsService, private dateAdapter: NgbDateAdapter<string>) {}
@@ -54,7 +55,7 @@ export class AltaActorComponent implements OnInit {
     setTimeout(() => {
       this.loading = false;
       console.log(this.nuevoActor);
-      this.actorsService.createActor({ data: this.nuevoActor });
+      this.actorsService.createActor({ ...this.nuevoActor });
       // this.router.navigate(['/busqueda']);
     }, 1500);
   }
