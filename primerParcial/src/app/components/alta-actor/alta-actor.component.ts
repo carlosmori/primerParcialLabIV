@@ -51,11 +51,12 @@ export class AltaActorComponent implements OnInit {
     this.nuevoActor.id = 1;
     console.log(this.model);
     this.loading = true;
-    // setTimeout(() => {
-    //   this.loading = false;
-    //   console.log(this.nuevoActor);
-    //   // this.router.navigate(['/busqueda']);
-    // }, 1500);
+    setTimeout(() => {
+      this.loading = false;
+      console.log(this.nuevoActor);
+      this.actorsService.createActor({ data: this.nuevoActor });
+      // this.router.navigate(['/busqueda']);
+    }, 1500);
   }
   asignarPais(pais: Pais) {
     this.nuevoActor.nacionalidad = pais.name;
